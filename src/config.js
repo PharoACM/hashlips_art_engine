@@ -1,19 +1,19 @@
 const { MODE } = require("./blendMode.js");
 const description =
-  "This is the description of your NFT project, remember to replace this";
+  "Pharo NFT collection ...";
 const baseUri = "ipfs://QmNfPMWLPTEbFpBtPFy4wkYEHRVWcz8dzjziTcPbebzF53";
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 20,
+    growEditionSizeTo: 5,
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Body" },
+      { name: "Clothes" },
+      { name: "Belt" },
+      { name: "Accessory" },
+      { name: "Head" },
+      //{ name: "Eyes" },
     ],
   },
 ];
@@ -30,7 +30,7 @@ const background = {
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 10000;
+const uniqueDnaTorrance = 200;
 
 module.exports = {
   format,
