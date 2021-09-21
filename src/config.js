@@ -1,20 +1,21 @@
 const { MODE } = require("./blendMode.js");
 const description =
-  "Pharo NFT collection ...";
+  "Pharo NFT Collection v1";
 const baseUri = "ipfs://QmNfPMWLPTEbFpBtPFy4wkYEHRVWcz8dzjziTcPbebzF53";
 
 const layerConfigurations = [
   {
     // Super Rare
-    growEditionSizeTo: 15,
+    growEditionSizeTo: 5,
     layersOrder: [
       { name: "Background" },
+      { name: "Silouette" },
       { name: "Body" },
       { name: "Clothes" },
       { name: "Belt" },
       { name: "Accessory" },
       { name: "Head" },
-      //{ name: "Eyes" },
+      { name: "Eyes" },
     ],
   },
   // Rare
