@@ -5,8 +5,8 @@ const baseUri = "ipfs://QmNfPMWLPTEbFpBtPFy4wkYEHRVWcz8dzjziTcPbebzF53";
 
 const layerConfigurations = [
   {
-    // Super Rare
-    growEditionSizeTo: 5,
+    // Common
+    growEditionSizeTo: 4900,
     layersOrder: [
       { name: "Background" },
       { name: "Silouette" },
@@ -20,15 +20,15 @@ const layerConfigurations = [
   },
   // Rare
   // {
-  //   growEditionSizeTo: 30,
+  //   growEditionSizeTo: 100,
   //   layersOrder: [
   //     { name: "Background" },
   //     { name: "" },
   //   ],
   // },
-  // Commons
+  // Super Rare
   // {
-  //   growEditionSizeTo: 675,
+  //   growEditionSizeTo: 40,
   //   layersOrder: [
   //     { name: "Background" },
   //   ],
