@@ -1,38 +1,49 @@
 const { MODE } = require("./blendMode.js");
 const description =
   "Pharo NFT Collection v1";
-const baseUri = "ipfs://QmNfPMWLPTEbFpBtPFy4wkYEHRVWcz8dzjziTcPbebzF53";
+const baseUri = "";
 
 const layerConfigurations = [
-  {
-    // Common
-    growEditionSizeTo: 4900,
-    layersOrder: [
-      { name: "Background" },
-      { name: "Silouette" },
-      { name: "Body" },
-      { name: "Clothes" },
-      { name: "Belt" },
-      { name: "Accessory" },
-      { name: "Head" },
-      { name: "Eyes" },
-    ],
-  },
-  // Rare
   // {
-  //   growEditionSizeTo: 100,
+  //   // Common
+  //   growEditionSizeTo: 10,
   //   layersOrder: [
   //     { name: "Background" },
-  //     { name: "" },
+  //     { name: "Body" },
+  //     { name: "Clothes" },
+  //     { name: "Belt" },
+  //     { name: "Accessory" },
+  //     { name: "Head" },
+  //     { name: "Eyes" },
+  //   ],
+  // },
+  // Rare
+  // {
+  //   growEditionSizeTo: 5,
+  //   layersOrder: [
+  //     { name: "Background" },
+  //     { name: "BodyRare" },
+  //     { name: "ClothesRare" },
+  //     { name: "BeltRare" },
+  //     { name: "Accessory" },
+  //     { name: "HeadRare" },
+  //     { name: "Eyes" },
   //   ],
   // },
   // Super Rare
-  // {
-  //   growEditionSizeTo: 40,
-  //   layersOrder: [
-  //     { name: "Background" },
-  //   ],
-  // },
+  {
+    growEditionSizeTo: 2,
+    layersOrder: [
+      { name: "Background" },
+      { name: "BodySuperRare" },
+      { name: "ClothesSuperRare" },
+      { name: "Silouette" },
+      { name: "BeltSuperRare" },
+      { name: "Accessory" },
+      { name: "HeadSuperRare" },
+      { name: "Eyes" },
+    ],
+  },
 ];
 
 const format = {
