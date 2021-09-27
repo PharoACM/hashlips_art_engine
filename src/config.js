@@ -21,7 +21,7 @@ const layerConfigurations = [
   // {
   //   growEditionSizeTo: 5,
   //   layersOrder: [
-  //     { name: "Background" },
+  //     { name: "BackgroundRare" },
   //     { name: "BodyRare" },
   //     { name: "ClothesRare" },
   //     { name: "BeltRare" },
@@ -34,7 +34,7 @@ const layerConfigurations = [
   {
     growEditionSizeTo: 2,
     layersOrder: [
-      { name: "Background" },
+      { name: "BackgroundSuperRare" },
       { name: "BodySuperRare" },
       { name: "ClothesSuperRare" },
       { name: "Silouette" },
