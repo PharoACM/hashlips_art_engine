@@ -18,32 +18,32 @@ const layerConfigurations = [
   //   ],
   // },
   // Rare
-  {
-    growEditionSizeTo: 5,
-    layersOrder: [
-      { name: "BackgroundRare" },
-      { name: "BodyRare" },
-      { name: "ClothesRare" },
-      { name: "BeltRare" },
-      { name: "Accessory" },
-      { name: "HeadRare" },
-      { name: "Eyes" },
-    ],
-  },
-  // Super Rare
   // {
-  //   growEditionSizeTo: 2,
+  //   growEditionSizeTo: 5,
   //   layersOrder: [
-  //     { name: "BackgroundSuperRare" },
-  //     { name: "BodySuperRare" },
-  //     { name: "ClothesSuperRare" },
-  //     { name: "Silouette" },
-  //     { name: "BeltSuperRare" },
+  //     { name: "BackgroundRare" },
+  //     { name: "BodyRare" },
+  //     { name: "ClothesRare" },
+  //     { name: "BeltRare" },
   //     { name: "Accessory" },
-  //     { name: "HeadSuperRare" },
+  //     { name: "HeadRare" },
   //     { name: "Eyes" },
   //   ],
   // },
+  // Super Rare
+  {
+    growEditionSizeTo: 2,
+    layersOrder: [
+      { name: "BackgroundSuperRare" },
+      { name: "BodySuperRare" },
+      { name: "ClothesSuperRare" },
+      { name: "Silouette" },
+      { name: "BeltSuperRare" },
+      { name: "Accessory" },
+      { name: "HeadSuperRare" },
+      { name: "Eyes" },
+    ],
+  },
 ];
 
 const format = {
