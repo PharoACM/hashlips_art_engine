@@ -1,12 +1,12 @@
 const { MODE } = require("./blendMode.js");
 const description =
-  "Pharo NFT Collection v1";
+  "Pharo NFT Collection ~ Pharos is a collection of 5040 uniquely created on the Ethereum blockchain and will be used to support the Pharo DAO.";
 const baseUri = "";
 
 const layerConfigurations = [
   {
-  // Common
-    growEditionSizeTo: 5, //4790,
+  // Common w/ accessory
+    growEditionSizeTo: 5, //2000,
     layersOrder: [
       { name: "Background" },
       { name: "Body" },
@@ -17,9 +17,21 @@ const layerConfigurations = [
       { name: "Eyes" },
     ],
   },
+  {
+    // Common w/o accessory
+      growEditionSizeTo: 10, //4790,
+      layersOrder: [
+        { name: "Background" },
+        { name: "Body" },
+        { name: "Clothes" },
+        { name: "Belt" },
+        { name: "Head" },
+        { name: "Eyes" },
+      ],
+    },
   // Rare
   {
-    growEditionSizeTo: 3, //200,
+    growEditionSizeTo: 13, //4990,
     layersOrder: [
       { name: "BackgroundRare" },
       { name: "BodyRare" },
@@ -32,7 +44,7 @@ const layerConfigurations = [
   },
   // Super Rare
   {
-    growEditionSizeTo: 1, //50,
+    growEditionSizeTo: 14, //5040,
     layersOrder: [
       { name: "BackgroundSuperRare" },
       { name: "BodySuperRare" },

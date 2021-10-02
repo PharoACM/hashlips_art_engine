@@ -198,6 +198,7 @@ const startCreating = async () => {
   let editionCount = 1;
   let failedCount = 0;
   while (layerConfigIndex < layerConfigurations.length) {
+    // console.log(layerConfigurations.length);
     const layers = layersSetup(
       layerConfigurations[layerConfigIndex].layersOrder
     );
