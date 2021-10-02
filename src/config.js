@@ -4,42 +4,42 @@ const description =
 const baseUri = "";
 
 const layerConfigurations = [
-  // {
-  //   // Common
-  //   growEditionSizeTo: 10,
-  //   layersOrder: [
-  //     { name: "Background" },
-  //     { name: "Body" },
-  //     { name: "Clothes" },
-  //     { name: "Belt" },
-  //     { name: "Accessory" },
-  //     { name: "Head" },
-  //     { name: "Eyes" },
-  //   ],
-  // },
+  {
+  // Common
+    growEditionSizeTo: 5, //4790,
+    layersOrder: [
+      { name: "Background" },
+      { name: "Body" },
+      { name: "Clothes" },
+      { name: "Belt" },
+      { name: "Accessory" },
+      { name: "Head" },
+      { name: "Eyes" },
+    ],
+  },
   // Rare
-  // {
-  //   growEditionSizeTo: 5,
-  //   layersOrder: [
-  //     { name: "BackgroundRare" },
-  //     { name: "BodyRare" },
-  //     { name: "ClothesRare" },
-  //     { name: "BeltRare" },
-  //     { name: "Accessory" },
-  //     { name: "HeadRare" },
-  //     { name: "Eyes" },
-  //   ],
-  // },
+  {
+    growEditionSizeTo: 3, //200,
+    layersOrder: [
+      { name: "BackgroundRare" },
+      { name: "BodyRare" },
+      { name: "ClothesRare" },
+      { name: "BeltRare" },
+      { name: "AccessoryRare" },
+      { name: "HeadRare" },
+      { name: "Eyes" },
+    ],
+  },
   // Super Rare
   {
-    growEditionSizeTo: 2,
+    growEditionSizeTo: 1, //50,
     layersOrder: [
       { name: "BackgroundSuperRare" },
       { name: "BodySuperRare" },
       { name: "ClothesSuperRare" },
       { name: "Silouette" },
       { name: "BeltSuperRare" },
-      { name: "Accessory" },
+      { name: "AccessorySuperRare" },
       { name: "HeadSuperRare" },
       { name: "Eyes" },
     ],
