@@ -22,70 +22,68 @@ const layerConfigurations = [
     ],
   },
   // SuperRare no Accessory
-  {
-    growEditionSizeTo: 300,
-    layersOrder: [
-      { name: "BackgroundSuperRare" },
-      { name: "BodySuperRare" },
-      { name: "ClothesSuperRare" },
-      { name: "Silouette" },
-      { name: "BeltSuperRare" },
-      { name: "HeadSuperRare" },
-      { name: "Eyes" },
-    ],
-  },
+  // {
+  //   growEditionSizeTo: 300,
+  //   layersOrder: [
+  //     { name: "BackgroundSuperRare" },
+  //     { name: "BodySuperRare" },
+  //     { name: "ClothesSuperRare" },
+  //     { name: "Silouette" },
+  //     { name: "BeltSuperRare" },
+  //     { name: "HeadSuperRare" },
+  //     { name: "Eyes" },
+  //   ],
+  // },
   // Rare No Accessory
-  {
-    growEditionSizeTo: 500,
-    layersOrder: [
-      { name: "BackgroundRare" },
-      { name: "BodyRare" },
-      { name: "ClothesRare" },
-      { name: "BeltRare" },
-      { name: "HeadRare" },
-      { name: "Eyes" },
-    ],
-  },
+  // {
+  //   growEditionSizeTo: 500,
+  //   layersOrder: [
+  //     { name: "BackgroundRare" },
+  //     { name: "BodyRare" },
+  //     { name: "ClothesRare" },
+  //     { name: "BeltRare" },
+  //     { name: "HeadRare" },
+  //     { name: "Eyes" },
+  //   ],
+  // },
   // Rare
-  {
-    growEditionSizeTo: 900,
-    layersOrder: [
-      { name: "BackgroundRare" },
-      { name: "BodyRare" },
-      { name: "ClothesRare" },
-      { name: "BeltRare" },
-      { name: "AccessoryRare" },
-      { name: "HeadRare" },
-      { name: "Eyes" },
-    ],
-  },
-  {
+  // {
+  //   growEditionSizeTo: 900,
+  //   layersOrder: [
+  //     { name: "BackgroundRare" },
+  //     { name: "BodyRare" },
+  //     { name: "ClothesRare" },
+  //     { name: "BeltRare" },
+  //     { name: "AccessoryRare" },
+  //     { name: "HeadRare" },
+  //     { name: "Eyes" },
+  //   ],
+  // },
   // Common w/ accessory
-    growEditionSizeTo: 2140,
-    layersOrder: [
-      { name: "Background" },
-      { name: "Body" },
-      { name: "Clothes" },
-      { name: "Belt" },
-      { name: "Accessory" },
-      { name: "Head" },
-      { name: "Eyes" },
-    ],
-  },
-  {
-    // Common w/o accessory
-      growEditionSizeTo: 5040,
-      layersOrder: [
-        { name: "Background" },
-        { name: "Body" },
-        { name: "Clothes" },
-        { name: "Belt" },
-        { name: "Head" },
-        { name: "Eyes" },
-      ],
-    },
-  
-  
+  // {
+  //   growEditionSizeTo: 2140,
+  //   layersOrder: [
+  //     { name: "Background" },
+  //     { name: "Body" },
+  //     { name: "Clothes" },
+  //     { name: "Belt" },
+  //     { name: "Accessory" },
+  //     { name: "Head" },
+  //     { name: "Eyes" },
+  //   ],
+  // },
+  // Common w/o accessory
+  // {
+  //   growEditionSizeTo: 5040,
+  //   layersOrder: [
+  //     { name: "Background" },
+  //     { name: "Body" },
+  //     { name: "Clothes" },
+  //     { name: "Belt" },
+  //     { name: "Head" },
+  //     { name: "Eyes" },
+  //   ],
+  // },
 ];
 
 const format = {
@@ -96,6 +94,13 @@ const format = {
 const background = {
   generate: true,
   brightness: "80%",
+};
+
+const preview = {
+  thumbPerRow: 5,
+  thumbWidth: 50,
+  imageRatio: format.width / format.height,
+  imageName: "preview.png",
 };
 
 const rarityDelimiter = "#";
@@ -110,4 +115,5 @@ module.exports = {
   uniqueDnaTorrance,
   layerConfigurations,
   rarityDelimiter,
+  preview,
 };
