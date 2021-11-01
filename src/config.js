@@ -1,7 +1,7 @@
 const { MODE } = require("./blendMode.js");
 const description =
   "Pharo NFT Collection ~ Pharo is a collection of 5040 uniquely created Pharos living on the Ethereum blockchain " +
-  "and will be used to support the Pharo DAO. Pharo NFT's will allow its holders to access certain perks and rewards" +
+  "and will be used to support the Pharo DAO. Pharo NFT's will allow its holders to access certain perks and rewards " +
   "from the Pharo Protocol and Community.";
 const baseUri = "";
 

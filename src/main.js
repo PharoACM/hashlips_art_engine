@@ -229,10 +229,6 @@ const startCreating = async () => {
     console.log("Count: ", count);
     while (count <= layerConfigurations[layerConfigIndex].growEditionSizeTo) {
       edition = getEditionCount();
-	  // let editionsUsed = [];
-	  // editionsUsed.push(edition);
-
-	  // isEditionUnique(editionsUsed, );
 
 	  
       let newDna = createDna(layers);
