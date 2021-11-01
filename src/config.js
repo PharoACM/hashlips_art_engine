@@ -8,7 +8,7 @@ const baseUri = "";
 const layerConfigurations = [
   // Super Rare
   {
-    growEditionSizeTo: 100,
+    growEditionSizeTo: 10,
     layersOrder: [
       { name: "BackgroundSuperRare" },
       { name: "BodySuperRare" },

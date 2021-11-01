@@ -80,6 +80,7 @@ const layersSetup = (layersOrder) => {
   return layers;
 };
 
+// todo: update to be random _editionCount without reusing a number
 const saveImage = (_editionCount) => {
   fs.writeFileSync(
     `${buildDir}/images/${_editionCount}.png`,
@@ -156,6 +157,14 @@ const isDnaUnique = (_DnaList = [], _dna = []) => {
   return foundDna == undefined ? true : false;
 };
 
+// ? added this to check if the edition exists
+const isEditionUnique = (_EditionList = [], _editions = []) => {
+  let foundEdition = _EditionList.find(
+    (i) => i.join("") === _editions.join("")
+  );
+  return foundEdition == undefined ? true : false;
+};
+
 const createDna = (_layers) => {
   let randNum = [];
   _layers.forEach((layer) => {
@@ -193,18 +202,39 @@ const saveMetaDataSingleFile = (_editionCount) => {
   );
 };
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+const getEditionCount = () => {
+  const min = 1;
+  const max = 5040;
+  return getRandomInt(min, max);
+};
+
+// Create the images and json files
 const startCreating = async () => {
   let layerConfigIndex = 0;
-  let editionCount = 1;
+  let count = 1;
+  let edition;
   let failedCount = 0;
   while (layerConfigIndex < layerConfigurations.length) {
-    // console.log(layerConfigurations.length);
+    console.log("Layer Configs: ", layerConfigurations.length);
     const layers = layersSetup(
       layerConfigurations[layerConfigIndex].layersOrder
     );
-    while (
-      editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
-    ) {
+    console.log("Count: ", count);
+    while (count <= layerConfigurations[layerConfigIndex].growEditionSizeTo) {
+      edition = getEditionCount();
+	  // let editionsUsed = [];
+	  // editionsUsed.push(edition);
+
+	  // isEditionUnique(editionsUsed, );
+
+	  
       let newDna = createDna(layers);
       if (isDnaUnique(dnaList, newDna)) {
         let results = constructLayerToDna(newDna, layers);
@@ -222,17 +252,15 @@ const startCreating = async () => {
           renderObjectArray.forEach((renderObject) => {
             drawElement(renderObject);
           });
-          saveImage(editionCount);
-          addMetadata(newDna, editionCount);
-          saveMetaDataSingleFile(editionCount);
+          saveImage(edition);
+          addMetadata(newDna, edition);
+          saveMetaDataSingleFile(edition);
           console.log(
-            `Created edition: ${editionCount}, with DNA: ${sha1(
-              newDna.join("")
-            )}`
+            `Created edition: ${edition}, with DNA: ${sha1(newDna.join(""))}`
           );
         });
         dnaList.push(newDna);
-        editionCount++;
+        count++;
       } else {
         console.log("DNA exists!");
         failedCount++;
