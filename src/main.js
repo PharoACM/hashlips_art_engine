@@ -16,11 +16,13 @@ const {
   rarityDelimiter,
 } = require(path.join(basePath, "/src/config.js"));
 const console = require("console");
+const { start } = require("repl");
 const canvas = createCanvas(format.width, format.height);
 const ctx = canvas.getContext("2d");
 var metadataList = [];
 var attributesList = [];
 var dnaList = [];
+var editionList = [];
 
 const buildSetup = () => {
   if (fs.existsSync(buildDir)) {
@@ -210,9 +212,12 @@ function getRandomInt(min, max) {
 }
 
 const getEditionCount = () => {
+  let edtionCount = [];
   const min = 1;
   const max = 5040;
-  return getRandomInt(min, max);
+  edtionCount.push(getRandomInt(min, max));
+
+  return edtionCount;
 };
 
 // Create the images and json files
@@ -221,6 +226,7 @@ const startCreating = async () => {
   let count = 1;
   let edition;
   let failedCount = 0;
+
   while (layerConfigIndex < layerConfigurations.length) {
     console.log("Layer Configs: ", layerConfigurations.length);
     const layers = layersSetup(
@@ -228,44 +234,51 @@ const startCreating = async () => {
     );
     console.log("Count: ", count);
     while (count <= layerConfigurations[layerConfigIndex].growEditionSizeTo) {
-      edition = getEditionCount();
+      start;
+      let newEdition = getEditionCount();
 
-	  
-      let newDna = createDna(layers);
-      if (isDnaUnique(dnaList, newDna)) {
-        let results = constructLayerToDna(newDna, layers);
-        let loadedElements = [];
+      if (isEditionUnique(editionList, newEdition)) {
+        let newDna = createDna(layers);
+        if (isDnaUnique(dnaList, newDna)) {
+          let results = constructLayerToDna(newDna, layers);
+          let loadedElements = [];
 
-        results.forEach((layer) => {
-          loadedElements.push(loadLayerImg(layer));
-        });
-
-        await Promise.all(loadedElements).then((renderObjectArray) => {
-          ctx.clearRect(0, 0, format.width, format.height);
-          if (background.generate) {
-            drawBackground();
-          }
-          renderObjectArray.forEach((renderObject) => {
-            drawElement(renderObject);
+          results.forEach((layer) => {
+            loadedElements.push(loadLayerImg(layer));
           });
-          saveImage(edition);
-          addMetadata(newDna, edition);
-          saveMetaDataSingleFile(edition);
-          console.log(
-            `Created edition: ${edition}, with DNA: ${sha1(newDna.join(""))}`
-          );
-        });
-        dnaList.push(newDna);
-        count++;
-      } else {
-        console.log("DNA exists!");
-        failedCount++;
-        if (failedCount >= uniqueDnaTorrance) {
-          console.log(
-            `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
-          );
-          process.exit();
+
+          await Promise.all(loadedElements).then((renderObjectArray) => {
+            ctx.clearRect(0, 0, format.width, format.height);
+            if (background.generate) {
+              drawBackground();
+            }
+            renderObjectArray.forEach((renderObject) => {
+              drawElement(renderObject);
+            });
+            saveImage(newEdition);
+            addMetadata(newDna, newEdition);
+            saveMetaDataSingleFile(newEdition);
+            console.log(
+              `Created edition: ${newEdition}, with DNA: ${sha1(
+                newDna.join("")
+              )}`
+            );
+          });
+          dnaList.push(newDna);
+          count++;
+        } else {
+          console.log("DNA exists!");
+          failedCount++;
+          if (failedCount >= uniqueDnaTorrance) {
+            console.log(
+              `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+            );
+            process.exit();
+          }
         }
+        editionList.push(newEdition);
+      } else {
+        goto: start;
       }
     }
     layerConfigIndex++;
