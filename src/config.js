@@ -97,7 +97,7 @@ const background = {
 };
 
 const preview = {
-  thumbPerRow: 5,
+  thumbPerRow: 10,
   thumbWidth: 50,
   imageRatio: format.width / format.height,
   imageName: "preview.png",
